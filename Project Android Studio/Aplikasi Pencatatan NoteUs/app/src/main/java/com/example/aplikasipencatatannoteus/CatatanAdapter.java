@@ -1,6 +1,7 @@
 package com.example.aplikasipencatatannoteus;
 
 import android.content.Context;
+import android.util.Log;
 import android.view.LayoutInflater;
 import android.view.View;
 import android.view.ViewGroup;
@@ -28,6 +29,7 @@ public class CatatanAdapter extends FirestoreRecyclerAdapter<Catatan, CatatanAda
     protected void onBindViewHolder(@NonNull CatatanAdapter.ViewHolder holder, int position, @NonNull Catatan model) {
         holder.teksCatatan.setText(model.catatan);
         holder.teksNama.setText(model.email);
+        Log.d("Data", "Catatan: " + model.catatan + ", Nama: " + model.email);
     }
 
     @NonNull
@@ -35,7 +37,7 @@ public class CatatanAdapter extends FirestoreRecyclerAdapter<Catatan, CatatanAda
     public CatatanAdapter.ViewHolder onCreateViewHolder(@NonNull ViewGroup parent, int viewType) {
         Context context = parent.getContext();
         LayoutInflater inflater = LayoutInflater.from(context);
-        ViewHolder holder = new ViewHolder((inflater.inflate(R.layout.catatan_item, parent, false)));
+        ViewHolder holder = new ViewHolder(inflater.inflate(R.layout.catatan_item, parent, false));
         return holder;
     }
 

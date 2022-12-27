@@ -5,16 +5,14 @@ public class Catatan {
     public String userId;
     public String email;
     public String catatan;
-    public String Nama;
 
-    public Catatan(String userId, String email, String catatan) {
+    public Catatan() {
 
     }
 
-    public Catatan(String userId, String email, String catatan, String nama) {
+    public Catatan(String userId, String email, String catatan) {
         this.userId = userId;
         this.email = email;
         this.catatan = catatan;
-        this.Nama = nama;
     }
 }

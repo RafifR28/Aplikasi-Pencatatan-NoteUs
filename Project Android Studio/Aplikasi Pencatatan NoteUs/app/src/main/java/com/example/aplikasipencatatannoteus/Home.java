@@ -48,4 +48,8 @@ public class Home extends AppCompatActivity {
     public void toPenting(View view) {
         startActivity(new Intent(this, FormPenting.class));
     }
+
+    public void toRencana(View view) {
+        startActivity(new Intent(this, FormRencana.class));
+    }
 }

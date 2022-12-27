@@ -12,9 +12,9 @@ import com.google.firebase.auth.FirebaseUser;
 import com.google.firebase.firestore.FirebaseFirestore;
 import com.google.firebase.firestore.Query;
 
-public class listPenting extends AppCompatActivity {
+public class listRencana extends AppCompatActivity {
 
-    RecyclerView recCatatan;
+    RecyclerView recyPenting;
     String namaUser;
 
     FirebaseUser user;
@@ -26,9 +26,9 @@ public class listPenting extends AppCompatActivity {
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
-        setContentView(R.layout.activity_list_penting);
-        recCatatan = findViewById(R.id.recPenting);
-        recCatatan.setLayoutManager(new LinearLayoutManager(this));
+        setContentView(R.layout.activity_list_rencana);
+        recyPenting = findViewById(R.id.recRencana);
+        recyPenting.setLayoutManager(new LinearLayoutManager(this));
 
         fireDb = FirebaseFirestore.getInstance();
         mAuth = FirebaseAuth.getInstance();
@@ -46,12 +46,12 @@ public class listPenting extends AppCompatActivity {
                 .setQuery(query, Catatan.class)
                 .build();
         adapter = new CatatanAdapter(options);
-        recCatatan.setAdapter(adapter);
+        recyPenting.setAdapter(adapter);
         adapter.startListening();
     }
 
     @Override
-    protected void onStop() {
+        protected void onStop() {
         super.onStop();
         adapter.stopListening();
     }
